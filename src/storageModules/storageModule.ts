@@ -1,6 +1,6 @@
 import moduleInterface from '../common/interfaces/module'
 
-export default class ingredientModule implements moduleInterface{
+export default class storageModule implements moduleInterface{
     name: string;
     //TODO : discuss that every storage contains only ONE ingredient
 

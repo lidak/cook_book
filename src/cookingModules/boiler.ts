@@ -1,4 +1,5 @@
 import moduleInterface from '../common/interfaces/module'
+/*import ing*/
 
 export default class BoilerClass implements moduleInterface{
 
