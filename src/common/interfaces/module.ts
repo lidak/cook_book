@@ -1,7 +1,6 @@
-//import ingredient from '../ingredients';
 
 export default interface moduleInerface {
-   // name: string,
-    getIngredients(name: string, amount: number),
-    loadIngredients(name: string, amount: number)
+    name: string,
+    getIngredient(name: string, amount: number),
+    loadIngredient(name: string, amount: number)
 }

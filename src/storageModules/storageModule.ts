@@ -1,17 +1,30 @@
 import moduleInterface from '../common/interfaces/module'
+import ingredient from '../ingredients/ingredient'
 
 export default class storageModule implements moduleInterface{
     name: string;
-    //TODO : discuss that every storage contains only ONE ingredient
+    ingredients:[ingredient] = [
+        new ingredient("water", 1),
+        new ingredient("coffee", 3),
+        new ingredient("sugar", 2),
+        new ingredient("milk", 5)
+    ];
 
-    getIngredients(name: string, amount: number){
-
+    constructor(name: string){
+        this.name = name;
     }
-    loadIngredients(name: string, amount: number){
 
+    getIngredient(name: string, amount: number){
+        let ingredient = this.ingredients.filter(ingredient=>ingredient.name === name && ingredient.amount <= amount);
+        console.log(ingredient);
+        return ingredient;
+    }
+
+    loadIngredient(name: string, amount: number){
+        this.ingredients.push(new ingredient(name, amount));
     }
 
     isAvailable(name: string, amount: number){
-        // check avb ingredient from storage
+        // TODO : we don't need it
     }
 }
