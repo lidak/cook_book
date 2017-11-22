@@ -1,7 +1,7 @@
 import moduleInterface from '../common/interfaces/module'
-import storageMoudle from '../storageModules/storageModule'
+import storageModule from '../storageModules/storageModule'
 
-export default class BoilerClass implements moduleInterface{
+export default class BoilerModule implements moduleInterface{
     name: string;
 
     constructor(name: string){
