@@ -1,13 +1,14 @@
 import moduleInterface from '../common/interfaces/module'
-import ingredient from '../ingredients/ingredient'
+import Ingredient from '../ingredients/ingredient'
 
 export default class storageModule implements moduleInterface{
     name: string;
-    ingredients:[ingredient] = [
-        new ingredient("water", 1),
-        new ingredient("coffee", 3),
-        new ingredient("sugar", 2),
-        new ingredient("milk", 5)
+
+    ingredients:[Ingredient] = [
+        new Ingredient("water", 25),
+        new Ingredient("coffee", 30),
+        new Ingredient("sugar", 50),
+        new Ingredient("milk", 10)
     ];
 
     constructor(name: string){
@@ -18,13 +19,14 @@ export default class storageModule implements moduleInterface{
         let ingredient = this.ingredients.filter(ingredient=>ingredient.name === name && ingredient.amount <= amount);
         console.log(ingredient);
         return ingredient;
+        // TODO: remove ing from storage
     }
 
-    loadIngredient(name: string, amount: number){
-        this.ingredients.push(new ingredient(name, amount));
+    loadIngredient(ingredient: Ingredient){
+        this.ingredients.push(ingredient);
     }
 
     isAvailable(name: string, amount: number){
-        // TODO : we don't need it
+        // TODO : check av ingredient for current recipe
     }
 }
