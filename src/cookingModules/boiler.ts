@@ -1,22 +1,23 @@
 import moduleInterface from '../common/interfaces/module'
-import storageModule from '../storageModules/storageModule'
+import Ingredient from "../ingredients/ingredient";
 
 export default class BoilerModule implements moduleInterface{
     name: string;
+    prepearedIngredient: Ingredient;
 
     constructor(name: string){
         this.name = name;
     }
 
     getIngredient(name: string, amount: number){
-
+        // ???
     }
 
-    loadIngredient(name: string, amount: number){
-
+    loadIngredient(ingredient:Ingredient){
+        // TODO: load ing from core
     }
 
-    cook(ingredients: any, options: any){
-        return true;
+    cook(ingredients: [Ingredient], options: any){
+        // TODO: return prepeared ing
     }
 }
