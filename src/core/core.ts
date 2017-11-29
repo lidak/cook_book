@@ -4,8 +4,25 @@ import BoilerModule from '../cookingModules/boiler'
 
 export default class Core {
     cookBook = new CookBook();
-    storageModule = new storageModule("storage1")
-        .getIngredient("water", 1);
-    boiler = new BoilerModule("boiler")
-        .getIngredient("water", 1);
+    modules = [];
+
+    initialise(){
+
+    }
+
+    checkAvailableModues(name){
+
+    }
+
+    plugModule(module){
+        this.modules.push(module);
+    }
+
+    unplugModule(module){
+
+    }
+
+    cook(recipe: {}, options: {}){
+
+    }
 }

@@ -11,6 +11,7 @@ export default class BoilerModule implements moduleInterface{
     getIngredient(name: string, amount: number){
 
     }
+
     loadIngredient(name: string, amount: number){
 
     }

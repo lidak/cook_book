@@ -3,11 +3,12 @@ import ingredient from '../ingredients/ingredient'
 
 export default class storageModule implements moduleInterface{
     name: string;
+
     ingredients:[ingredient] = [
-        new ingredient("water", 1),
-        new ingredient("coffee", 3),
-        new ingredient("sugar", 2),
-        new ingredient("milk", 5)
+        new ingredient("water", 25),
+        new ingredient("coffee", 30),
+        new ingredient("sugar", 50),
+        new ingredient("milk", 10)
     ];
 
     constructor(name: string){
@@ -25,6 +26,6 @@ export default class storageModule implements moduleInterface{
     }
 
     isAvailable(name: string, amount: number){
-        // TODO : we don't need it
+        // TODO : remove
     }
 }

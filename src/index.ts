@@ -3,6 +3,8 @@
 //COOK BOOK AND RECEIPTS STRUCTURE.
 import Core from './core/core';
 import recipeInterface from './common/interfaces/recipe';
+import BoilerModule from './cookingModules/boiler';
+import MixerModule from './cookingModules/mixer';
 
 interface HTMLInputEvent extends Event {
     target: HTMLInputElement & EventTarget;
@@ -14,6 +16,9 @@ const dishesSelect = document.getElementById('dishes') as HTMLInputElement;
 const recipesList:string[] = core.cookBook.getRecipesList();
 let availableOptions:{} = {};
 const optionsFormEl = document.getElementById('options_container');
+
+core.plugModule(new BoilerModule('boiler'));
+core.plugModule(new MixerModule('mixer'));
 
 recipesList.forEach((recipeName:string) => {
 
@@ -47,6 +52,12 @@ function changeSelectedRecipe(newSelectedReceip:string) {
         optionsFormEl.appendChild(optionSelectEl);
         optionSelectEl.onchange = changeSelectedOptions;
     })
+
+    const cookButtonEl = document.createElement('input');
+    cookButtonEl.setAttribute('type', 'button');
+    cookButtonEl.setAttribute('value', 'Cook');
+    //cookButtonEl.onclick = core.cook('','');
+    optionsFormEl.appendChild(cookButtonEl);
 }
 
 function changeSelectedOptions() {
@@ -60,4 +71,3 @@ function changeSelectedOptions() {
     const cookSequence = core.cookBook.getCookSequence(selectedDish, options);
     document.getElementById('receipt_sequence').innerText = JSON.stringify(cookSequence, null, 4);
 }
-
