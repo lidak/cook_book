@@ -16,6 +16,10 @@ export default class Steak implements recipeInterface {
     availableOptions:SteakAvailableOptions = {
         cookingLevel: ['rare', 'medium rare', 'well done'],
         sause: ['bbq', 'blue cheese']
+    };
+
+    isAvailable(modules, ingredients) {
+        // do logic here based on steps requirements such as module, ingredients, so on
     }
 
     buildReceipSequence(options:SteakOptions):[object] {

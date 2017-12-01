@@ -20,6 +20,10 @@ export default class Steak implements recipeInterface {
         size: ['small', 'medium', 'big']
     };
 
+    isAvailable(modules, ingredients) {
+        // do logic here based on steps requirements such as module, ingredients, so on
+    }
+
     buildReceipSequence(options: CoffeeOptions) {
         const {
             type,
